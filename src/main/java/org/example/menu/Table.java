@@ -1,4 +1,4 @@
-package org.example;
+package org.example.menu;
 
 public class Table {
 
@@ -9,6 +9,6 @@ public class Table {
         System.out.println("2 - добавить новую книгу");
         System.out.println("3 - редактировать существующую книгу (необходим id книги)");
         System.out.println("4 - удалить существующую книгу (необходим id книги)");
-        System.out.println("5 - выйти из библиотеки");
+        System.out.println("exit - выйти из библиотеки");
     }
 }

@@ -1,9 +1,13 @@
 package org.example;
 
+import org.example.menu.KeyHandler;
+import org.example.menu.Table;
+import org.example.util.Action;
+import org.example.util.Prop;
+
 public class Librarian {
     Action action = new Action();
     Table table = new Table();
-    KeyHandler keyHandler = new KeyHandler();
 
     public void setExit(boolean exit) {
         isExit = exit;
@@ -11,20 +15,18 @@ public class Librarian {
 
     private boolean isExit = false;
 
-
     public static void main(String[] args) {
-
         Librarian librarian = new Librarian();
-        librarian.start(librarian);
-
+        librarian.start();
     }
 
-    private void start(Librarian librarian) {
+    private void start() {
         action.init();
+        KeyHandler keyHandler = new KeyHandler(this);
 
         while (!isExit) {
             table.render();
-            keyHandler.handleMainMenu(librarian);
+            keyHandler.handleMainMenu();
         }
 
         Prop.scanner.close();
